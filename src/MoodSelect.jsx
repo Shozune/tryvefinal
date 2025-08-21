@@ -45,7 +45,7 @@ function MoodSelect() {
     
     console.log('Mood data saved:', moodData);
     alert('Mood saved successfully!');
-    navigate("/Homepage");
+    navigate("/homepage");
   };
 
   const getSliderBackground = () => {
@@ -155,7 +155,7 @@ function MoodSelect() {
 
           <button 
             className="save-button"
-            onClick={handleButtonClick}>
+            onClick={handleSaveAndContinue}>
             Save & Continue
           </button>
           

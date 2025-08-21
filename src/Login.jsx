@@ -29,9 +29,9 @@ export default function Login() {
       return;
     }
 
-    // If validation passes - navigate to TaskManager
+    // If validation passes - navigate to MoodSelect
     console.log('Login submitted:', { email, password });
-    navigate("/taskmanager");
+    navigate("/moodselect");
   }
 
   const handleForgotPassword = () => {

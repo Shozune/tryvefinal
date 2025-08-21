@@ -1,48 +1,47 @@
 import React from 'react';
 import './Homepage.css';
+import './TaskManager.css'; // Add this line for TaskManager styles
 import TryveLogo from './assets/tryvelogo.png';
 import Sunset from './assets/sunset.png';
+import { useNavigate } from 'react-router-dom'; // Add this import
 
 import { Menu, House, ChartLine, ClipboardList, Leaf } from 'lucide-react';
 
 const Homepage = () => {
+  const navigate = useNavigate(); // Add this line
+
   return (
     <div className="homepage">
-
-
       <div className="sidebar">
         {/* Hamburger / Menu Icon */}
         <div className="menu-icon">
           <Menu size={24} />
         </div>
 
-         <div className="nav-icons">
-          <div className="nav-icon home-icon">
+        <div className="nav-icons">
+          <div className="nav-icon home-icon" onClick={() => navigate('/homepage')}>
             <House size={22} />
           </div>
-          <div className="nav-icon">
+          <div className="nav-icon" onClick={() => navigate('/taskmanager')}>
             <ChartLine size={22} />
           </div>
-          <div className="nav-icon">
+          <div className="nav-icon" onClick={() => navigate('/taskmanager')}>
             <ClipboardList size={22} />
           </div>
         </div>
 
         <div className="sidebar-bottom">
-          <div className="plant-icon">🌱</div>
+          <div className="plant-icon" onClick={() => navigate('/profile')}>🌱</div>
         </div>
       </div>
 
-
       <div className="main-content">
-
         <header className="header">
           <img className="tryve-logo" src={TryveLogo}/>
           <div className="user-profile">
             <img className="avatar" src={Sunset}/>
           </div>
         </header>
-
 
         <div className="greeting-section">
           <h1 className="greeting">Good Evening, Franz! 👋</h1>
@@ -52,11 +51,8 @@ const Homepage = () => {
           </div>
         </div>
 
-
         <div className="dashboard-content">
-
           <div className="left-column">
-
             <div className="card streak-card">
               <p className="streak-text">Every step counts towards your goals!</p>
               <div className="streak-content">
@@ -67,7 +63,6 @@ const Homepage = () => {
                 </div>
               </div>
             </div>
-
 
             <div className="card mood-card">
               <div className="mood-content">
@@ -80,7 +75,6 @@ const Homepage = () => {
               </div>
             </div>
 
-        
             <div className="card focus-card">
               <div className="focus-header">
                 <span className="plus-icon">⊕</span>
@@ -94,9 +88,7 @@ const Homepage = () => {
             </div>
           </div>
 
-         
           <div className="right-column">
-     
             <div className="tasks-section">
               <div className="tasks-header">
                 <h2>Tasks for Today</h2>
@@ -127,7 +119,6 @@ const Homepage = () => {
               </div>
             </div>
 
-          
             <div className="music-corner">
               <div className="spotify-icon"></div>
               <div className="music-info">

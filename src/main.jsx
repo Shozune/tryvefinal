@@ -12,11 +12,14 @@ import ResetPassword from './ResetPassword.jsx';
 import TaskManager from './TaskManager.jsx';
 import Profile from './Profile.jsx';
 
+<script type="module" src="/src/main.jsx"></script>
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MoodSelect />} />
+        <Route path="/moodselect" element={<MoodSelect />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
