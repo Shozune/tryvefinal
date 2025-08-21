@@ -37,6 +37,11 @@ export default function Dashboard() {
     setActiveTab(tab);
   };
 
+  // User avatar click handler for profile access
+  const handleUserAvatarClick = () => {
+    setActiveTab("profile");
+  };
+
   // Logout logic
   const handleLogout = () => setShowLogoutConfirm(true);
   const confirmLogout = () => {
@@ -84,15 +89,12 @@ export default function Dashboard() {
           >
             <img src="/analytics-frame.svg" alt="Analytics" />
           </button>
-          <button
-            className={`nav-item ${activeTab === "profile" ? "active" : ""}`}
-            onClick={() => handleSidebarNav("profile")}
-          >
-            <img src="/small-logo.svg" alt="Profile" />
-          </button>
         </nav>
         <div className="sidebar-footer">
-          <div className="user-avatar active">
+          <div 
+            className={`user-avatar ${activeTab === "profile" ? "active" : ""}`}
+            onClick={handleUserAvatarClick}
+          >
             <img src="/small-logo.svg" alt="User Avatar" />
           </div>
         </div>
