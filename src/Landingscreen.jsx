@@ -6,7 +6,7 @@ import ForgotPassword from "./ForgotPassword";
 import ResetPassword from "./ResetPassword";
 import TaskManager from "./TaskManager";
 import Profile from "./Profile";
-import "./App.css";
+import "./Landingscreen.css";
 
 function Home() {
   const navigate = useNavigate();
