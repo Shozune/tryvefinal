@@ -1,0 +1,258 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0; 
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/bg-tree.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.app-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mood-modal {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  max-width: 28rem;
+  width: 100%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tryve-logo {
+  max-width: 200px;
+  height: 70px;
+}
+
+.subtitle {
+  color: rgba(0,0,0,0.5);
+  font-size: 0.875rem;
+}
+
+.mood-section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.section-emoji {
+  margin-left: 0.5rem;
+}
+
+.mood-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.mood-button {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  background: #f3f4f6;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.mood-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.mood-button:hover::before {
+  left: 100%;
+}
+
+.mood-button:hover {
+  background: #e5e7eb;
+  transform: translateY(-2px);
+}
+
+.mood-button.selected {
+  background: #dbeafe;
+  border-color: #60a5fa;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.mood-emoji {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.mood-button:hover .mood-emoji {
+  transform: scale(1.1);
+}
+
+.mood-button.selected .mood-emoji {
+  transform: scale(1.2);
+}
+
+.mood-label {
+  font-size: 0.75rem;
+  color: #374151;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+.energy-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.energy-level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.energy-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lowenergy-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.lowenergy-text {
+  font-size: 15px;
+  color: #000000;
+}
+
+.highenergy-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.highenergy-text {
+  font-size: 15px;
+  color: #000000;
+}
+
+.slider-container {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.energy-slider {
+  width: 100%;
+  height: 12px;
+  border-radius: 6px;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.energy-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  background: #000;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.energy-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.energy-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  background: #000;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.energy-slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.energy-value {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.energy-badge {
+  background: #000;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.save-button {
+  width: 100%;
+  background: #d1d5db;
+  color: #374151;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.save-button:hover {
+  background: #00c21a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 194, 26, 0.3);
+}
