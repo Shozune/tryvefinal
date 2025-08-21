@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import "./Homepage.css";
-import "./TaskManager.css";
-import "./Profile.css";
+import "./Dashboard.css";
 import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
@@ -129,9 +127,9 @@ export default function Dashboard() {
           </div>
         )}
 
-        {/* Tabs */}
+        {/* Home Tab - Homepage Content */}
         {activeTab === "home" && (
-          <div className="homepage">
+          <div className="dashboard-content">
             <div className="greeting-section">
               <h1 className="greeting">Good Evening, Franz! 👋</h1>
               <div className="date-time">
@@ -139,7 +137,7 @@ export default function Dashboard() {
                 <span className="time">8:00 AM</span>
               </div>
             </div>
-            <div className="dashboard-content">
+            <div className="homepage-grid">
               <div className="left-column">
                 <div className="card streak-card">
                   <p className="streak-text">Every step counts towards your goals!</p>
@@ -158,7 +156,9 @@ export default function Dashboard() {
                       <h3>Exhausted</h3>
                       <p>Energy: 3/5</p>
                     </div>
-                    <button className="update-mood-btn">UPDATE MOOD</button>
+                    <button className="update-mood-btn" onClick={() => navigate("/moodselect")}>
+                      UPDATE MOOD
+                    </button>
                   </div>
                 </div>
                 <div className="card focus-card">
@@ -192,15 +192,15 @@ export default function Dashboard() {
                     <div className="task-item yellow-border">
                       <input type="checkbox" className="task-checkbox" />
                       <div className="task-info">
-                        <span className="task-title">System Integration Assignment</span>
-                        <span className="task-due">Due in 3 days</span>
+                        <span className="task-title">Database Design Project</span>
+                        <span className="task-due">Due in 5 days</span>
                       </div>
                     </div>
                     <div className="task-item green-border">
                       <input type="checkbox" className="task-checkbox" />
                       <div className="task-info">
-                        <span className="task-title">System Integration Assignment</span>
-                        <span className="task-due">Due in 3 days</span>
+                        <span className="task-title">Team Meeting Preparation</span>
+                        <span className="task-due">Due tomorrow</span>
                       </div>
                     </div>
                   </div>
@@ -218,18 +218,16 @@ export default function Dashboard() {
           </div>
         )}
 
+        {/* Tasks Tab */}
         {activeTab === "tasks" && (
           <div className="dashboard-content">
             <div className="content-header">
               <h1 className="page-title">Task Manager</h1>
             </div>
-            {/* You can add more detailed task management UI here */}
             <div className="tasks-section">
               <div className="tasks-header">
-                <h2>Tasks for Today</h2>
-                <a href="#" className="see-all">
-                  See All
-                </a>
+                <h2>All Tasks</h2>
+                <button className="add-task-btn">Add Task</button>
               </div>
               <div className="task-list">
                 <div className="task-item red-border">
@@ -238,19 +236,31 @@ export default function Dashboard() {
                     <span className="task-title">System Integration Assignment</span>
                     <span className="task-due">Due in 3 days</span>
                   </div>
+                  <div className="task-actions">
+                    <button className="edit-btn">Edit</button>
+                    <button className="delete-btn">Delete</button>
+                  </div>
                 </div>
                 <div className="task-item yellow-border">
                   <input type="checkbox" className="task-checkbox" />
                   <div className="task-info">
-                    <span className="task-title">System Integration Assignment</span>
-                    <span className="task-due">Due in 3 days</span>
+                    <span className="task-title">Database Design Project</span>
+                    <span className="task-due">Due in 5 days</span>
+                  </div>
+                  <div className="task-actions">
+                    <button className="edit-btn">Edit</button>
+                    <button className="delete-btn">Delete</button>
                   </div>
                 </div>
                 <div className="task-item green-border">
                   <input type="checkbox" className="task-checkbox" />
                   <div className="task-info">
-                    <span className="task-title">System Integration Assignment</span>
-                    <span className="task-due">Due in 3 days</span>
+                    <span className="task-title">Team Meeting Preparation</span>
+                    <span className="task-due">Due tomorrow</span>
+                  </div>
+                  <div className="task-actions">
+                    <button className="edit-btn">Edit</button>
+                    <button className="delete-btn">Delete</button>
                   </div>
                 </div>
               </div>
@@ -258,17 +268,18 @@ export default function Dashboard() {
           </div>
         )}
 
+        {/* Analytics Tab */}
         {activeTab === "analytics" && (
           <div className="dashboard-content">
             <div className="content-header">
               <h1 className="page-title">Analytics</h1>
             </div>
-            <div className="dashboard-grid">
+            <div className="analytics-grid">
               {/* Left Column - Weekly Summary */}
               <div className="summary-section">
                 <h2 className="section-title">Weekly Summary</h2>
                 <div className="summary-cards">
-                  <div className="summary-card mood-card">
+                  <div className="summary-card mood-summary-card">
                     <div className="mood-emoji">😊</div>
                     <div className="summary-content">
                       <div className="summary-label">Average Mood</div>
@@ -350,10 +361,11 @@ export default function Dashboard() {
           </div>
         )}
 
+        {/* Profile Tab */}
         {activeTab === "profile" && (
-          <div className="profile-content">
-            <div className="profile-header">
-              <h1 className="profile-title">Account</h1>
+          <div className="dashboard-content">
+            <div className="content-header">
+              <h1 className="page-title">Account</h1>
             </div>
             <div className="profile-container">
               {/* User Profile Section */}

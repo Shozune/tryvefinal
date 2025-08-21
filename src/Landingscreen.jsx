@@ -1,22 +1,23 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Signup from "./Signup";
-import Login from "./Login";
-import ForgotPassword from "./ForgotPassword";
-import ResetPassword from "./ResetPassword";
-import Landingscreen from "./Landingscreen";
-import "./Landingscreen.css";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Landingscreen.css';
 
-export default function App() {
+const Landingscreen = () => {
+  const navigate = useNavigate();
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Landingscreen />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="container">
+      <img src="/Logo.png" alt="Tryve Logo" className="logo" />
+      <div>
+        <button className="button" onClick={() => navigate('/login')}>
+          Login
+        </button>
+        <button className="button" onClick={() => navigate('/signup')}>
+          Sign Up
+        </button>
+      </div>
+    </div>
   );
-}
+};
+
+export default Landingscreen;

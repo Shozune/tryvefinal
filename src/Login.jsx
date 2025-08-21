@@ -39,10 +39,10 @@ export default function Login() {
   };
 
   const handleGoogleLogin = () => {
-    // Handle Google authentication - also navigate to TaskManager on success
+    // Handle Google authentication - also navigate to MoodSelect on success
     console.log('Google login clicked');
     // Simulate successful Google login
-    navigate("/taskmanager");
+    navigate("/moodselect");
   };
 
   return (
@@ -147,8 +147,7 @@ export default function Login() {
             className="google-btn"
             onClick={handleGoogleLogin}
           >
-            {/* Replace this img src with your own Google icon */}
-            <img src="/public/Google__G__logo.svg.webp" alt="Google" className="google-icon" />
+            <img src="/Google__G__logo.svg.webp" alt="Google" className="google-icon" />
             Continue with Google
           </button>
         </form>
