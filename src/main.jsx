@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
+import './Landingscreen.css';
 import './MoodSelect.css';
 import './Landingscreen.css'; // Use Landingscreen styles
 import Landingscreen from './Landingscreen.jsx'; // Use Landingscreen component
@@ -9,8 +9,6 @@ import Signup from './Signup.jsx';
 import Login from './Login.jsx';
 import ForgotPassword from './ForgotPassword.jsx';
 import ResetPassword from './ResetPassword.jsx';
-import TaskManager from './TaskManager.jsx';
-import Profile from './Profile.jsx';
 import MoodSelect from './MoodSelect.jsx';
 
 createRoot(document.getElementById('root')).render(
@@ -22,8 +20,6 @@ createRoot(document.getElementById('root')).render(
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/taskmanager" element={<TaskManager />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/moodselect" element={<MoodSelect />} />
       </Routes>
     </BrowserRouter>

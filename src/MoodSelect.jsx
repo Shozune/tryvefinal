@@ -42,10 +42,9 @@ function MoodSelect() {
       energyLevel: energyLevel,
       timestamp: new Date().toISOString()
     };
-    
     console.log('Mood data saved:', moodData);
     alert('Mood saved successfully!');
-    navigate("/homepage");
+    navigate("/dashboard"); // Redirect to unified dashboard
   };
 
   const getSliderBackground = () => {
