@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-
 body {
   font-family: Inter, sans-serif;
   background: url("/background.png") no-repeat center center fixed;
@@ -20,14 +19,19 @@ body {
 }
 
 .logo {
-  width: 500px;
+  width: 600px;
   height: auto;
   margin-bottom: 240px;
   transition: filter 300ms;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #35ec07aa);
+
+
+.buttons-container {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center;
+  gap: 50px; /* Space between buttons */
 }
 
 .button {
@@ -39,11 +43,9 @@ body {
   border-radius: 100px;
   font-size: 24px;
   cursor: pointer;
-margin: 20px ;
-white-space: nowrap;
-    box-shadow: 12px 8px 4px rgba(0, 0, 0, 0.3); /* default shadow */
+  white-space: nowrap;
+  box-shadow: 12px 8px 4px rgba(0, 0, 0, 0.3); /* default shadow */
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-
 }
 
 .button:hover {

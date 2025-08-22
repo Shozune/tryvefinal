@@ -8,12 +8,12 @@ const Landingscreen = () => {
   return (
     <div className="container">
       <img src="/Logo.png" alt="Tryve Logo" className="logo" />
-      <div>
+      <div className="buttons-container">
+        <button className="button" onClick={() => navigate('/signup')}>
+          Sign up
+        </button>
         <button className="button" onClick={() => navigate('/login')}>
           Login
-        </button>
-        <button className="button" onClick={() => navigate('/signup')}>
-          Sign Up
         </button>
       </div>
     </div>
