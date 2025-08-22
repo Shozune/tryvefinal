@@ -102,7 +102,7 @@ export default function Dashboard() {
 
       {/* Main Content */}
       <div className="main-content">
-        {/* Header */}
+        {/* Header with enhanced shadow */}
         <header className="dashboard-header">
           <div className="logo-container">
             <img src="/Logo.png" alt="Tryve Logo" style={{ width: 180, height: "auto" }} />
@@ -270,14 +270,14 @@ export default function Dashboard() {
           </div>
         )}
 
-        {/* Analytics Tab */}
+        {/* Analytics Tab with enhanced styling */}
         {activeTab === "analytics" && (
           <div className="dashboard-content">
             <div className="content-header">
               <h1 className="page-title">Analytics</h1>
             </div>
             <div className="analytics-grid">
-              {/* Left Column - Weekly Summary */}
+              {/* Left Column - Weekly Summary with improved styling */}
               <div className="summary-section">
                 <h2 className="section-title">Weekly Summary</h2>
                 <div className="summary-cards">
@@ -308,7 +308,7 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-              {/* Right Column - Mood Analytics */}
+              {/* Right Column - Mood Analytics with enhanced chart */}
               <div className="analytics-section">
                 <h2 className="section-title">Weekly Mood Trend</h2>
                 <div className="mood-trend-chart">
@@ -325,6 +325,7 @@ export default function Dashboard() {
                     </div>
                   ))}
                 </div>
+                {/* Enhanced Mood Distribution */}
                 <div className="mood-distribution">
                   <h3 className="distribution-title">Mood Distribution</h3>
                   <div className="distribution-item">
